@@ -1,0 +1,626 @@
+/* ================================
+   LOLA — Main Stylesheet
+================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Caveat:wght@400;700&family=VT323&display=swap");
+
+:root {
+  --hot-pink: #ff2d78;
+  --magenta: #ff00aa;
+  --pastel-pink: #ffb3d9;
+  --pastel-yellow: #fff5a0;
+  --pastel-blue: #b3e5ff;
+  --pastel-purple: #e0b3ff;
+  --pastel-green: #b3ffcc;
+  --dark-bg: #f5d6ff;
+  --window-bg: rgba(255, 240, 250, 0.95);
+  --window-border: #ff2d78;
+  --taskbar-bg: rgb(255, 45, 120);
+  --font-pixel: "Press Start 2P", monospace;
+  --font-hand: "Caveat", cursive;
+  --font-mono: "VT323", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark-bg);
+  background-image:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(218, 76, 147, 0.6) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(49, 168, 233, 0.5) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 60% 80%,
+      rgba(130, 102, 149, 0.5) 0%,
+      transparent 40%
+    );
+  min-height: 100vh;
+  font-family: var(--font-hand);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ================================
+   TASKBAR
+================================ */
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: var(--hot-pink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  z-index: 1000;
+  border-top: 2px solid var(--pastel-pink);
+}
+
+.taskbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.start-btn {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: white;
+  background: var(--magenta);
+  padding: 4px 10px;
+  border: 2px solid white;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.start-btn:hover {
+  background: white;
+  color: var(--hot-pink);
+}
+
+.taskbar-item {
+  font-family: var(--font-pixel);
+  font-size: 0.45rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.taskbar-item.active {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.taskbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.taskbar-clock {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: white;
+}
+
+/* ================================
+   DESKTOP
+================================ */
+
+.desktop {
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 60px;
+  position: relative;
+}
+.desktop-artwork {
+  position: absolute;
+  bottom: 80px;
+  right: 140px;
+  height: 650px;
+  width: 450px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+/* ================================
+   DESKTOP ICONS
+================================ */
+
+.desktop-icons {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 70px;
+  text-align: center;
+}
+
+.desktop-icon .icon-img {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 8px rgba(255, 45, 120, 0.6));
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+
+.desktop-icon span {
+  font-family: var(--font-pixel);
+  font-size: 0.38rem;
+  color: white;
+  text-shadow:
+    1px 1px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000;
+  line-height: 1.4;
+}
+
+.desktop-icon:hover .icon-img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 12px rgba(255, 45, 120, 0.9));
+}
+
+/* ================================
+   WINDOWS
+================================ */
+
+.window {
+  position: absolute;
+  background: var(--window-bg);
+  border: 3px solid var(--window-border);
+  min-width: 280px;
+  max-width: 380px;
+  box-shadow:
+    4px 4px 0px var(--hot-pink),
+    8px 8px 0px rgba(255, 45, 120, 0.3);
+  z-index: 100;
+}
+
+.window-titlebar {
+  background: var(--hot-pink);
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: move;
+  user-select: none;
+}
+
+.window-title {
+  font-family: var(--font-pixel);
+  font-size: 0.42rem;
+  color: white;
+  letter-spacing: 0.03em;
+}
+
+.window-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.win-btn {
+  width: 18px;
+  height: 18px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-size: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  font-family: var(--font-pixel);
+}
+
+.win-btn:hover {
+  background: white;
+  color: var(--hot-pink);
+}
+
+.window-body {
+  padding: 20px;
+}
+
+/* ================================
+   WELCOME WINDOW
+================================ */
+
+.welcome-text {
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: #1a001a;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.welcome-links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.pixel-btn {
+  font-family: var(--font-pixel);
+  font-size: 0.45rem;
+  color: white;
+  background: var(--hot-pink);
+  border: 2px solid #cc0055;
+  padding: 8px 14px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  box-shadow: 3px 3px 0px #cc0055;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+
+.pixel-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #cc0055;
+}
+
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #cc0055;
+}
+
+.pixel-btn.secondary {
+  background: var(--pastel-purple);
+  color: #1a001a;
+  border-color: #9933cc;
+  box-shadow: 3px 3px 0px #9933cc;
+}
+
+.pixel-btn.secondary:hover {
+  box-shadow: 4px 4px 0px #9933cc;
+}
+
+/* ================================
+   NOW PLAYING WIDGET
+================================ */
+
+.widget {
+  position: absolute;
+  background: rgba(255, 179, 217, 0.15);
+  border: 2px solid var(--pastel-pink);
+  padding: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.widget.now-playing {
+  bottom: 60px;
+  left: 20px;
+  width: 220px;
+}
+
+.widget-header {
+  font-family: var(--font-pixel);
+  font-size: 0.38rem;
+  color: var(--pastel-yellow);
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.widget-body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.np-art {
+  font-size: 2rem;
+}
+
+.np-title {
+  font-family: var(--font-hand);
+  font-size: 1rem;
+  color: white;
+  font-weight: 700;
+}
+
+.np-sub {
+  font-family: var(--font-pixel);
+  font-size: 0.35rem;
+  color: var(--pastel-pink);
+  margin-top: 2px;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+/* ================================
+   ABOUT PAGE
+================================ */
+
+.bg-artwork {
+  position: fixed;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+  font-size: 20rem;
+  color: rgba(255, 45, 120, 0.04);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--pastel-yellow);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  animation: sparkle-pulse 2.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sparkle.large {
+  width: 10px;
+  height: 10px;
+  background: var(--pastel-pink);
+}
+
+@keyframes sparkle-pulse {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+@keyframes starFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-20px) scale(0.3);
+  }
+}
+
+.placeholder-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 45, 120, 0.2),
+    rgba(179, 229, 255, 0.2)
+  );
+  border-top: 2px solid var(--window-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-img.artist-photo {
+  aspect-ratio: 3/4;
+  background: linear-gradient(
+    135deg,
+    rgba(224, 179, 255, 0.3),
+    rgba(255, 45, 120, 0.15)
+  );
+}
+
+.placeholder-img span {
+  font-family: var(--font-pixel);
+  font-size: 0.38rem;
+  color: var(--pastel-pink);
+  opacity: 0.7;
+}
+
+.bio-text {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: #1a001a;
+  line-height: 1.7;
+}
+
+.cta-label {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  color: #1a001a;
+  text-align: center;
+}
+
+/* ================================
+   GALLERY PAGE
+================================ */
+
+.gallery-window {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  width: calc(100vw - 120px);
+  max-width: 900px;
+  min-width: 280px;
+  max-height: calc(100vh - 80px);
+}
+
+.gallery-body {
+  padding: 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 140px);
+}
+
+.masonry-grid {
+  columns: 3 200px;
+  column-gap: 12px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.masonry-item:hover {
+  border-color: var(--hot-pink);
+}
+
+.masonry-item img {
+  width: 100%;
+  display: block;
+}
+
+.masonry-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(26, 0, 26, 0.85);
+  padding: 8px 10px;
+  transform: translateY(100%);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.masonry-item:hover .masonry-overlay {
+  transform: translateY(0);
+}
+
+.masonry-title {
+  font-family: var(--font-hand);
+  font-size: 1rem;
+  color: var(--pastel-pink);
+  font-weight: 700;
+}
+
+.masonry-medium {
+  font-family: var(--font-pixel);
+  font-size: 0.35rem;
+  color: var(--pastel-yellow);
+}
+
+/* ================================
+   LIGHTBOX
+================================ */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 0, 26, 0.92);
+  z-index: 500;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-inner {
+  background: var(--window-bg);
+  border: 3px solid var(--hot-pink);
+  box-shadow: 4px 4px 0px var(--hot-pink);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.lightbox-body {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-body img {
+  max-width: 80vw;
+  max-height: 75vh;
+  display: block;
+  object-fit: contain;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+  .desktop {
+    padding: 16px;
+    padding-bottom: 60px;
+  }
+
+  .desktop-icons {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .window {
+    position: static !important;
+    transform: none !important;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .widget.now-playing {
+    position: static;
+    width: 100%;
+    margin-top: 16px;
+  }
+}

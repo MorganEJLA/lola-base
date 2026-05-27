@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOLA — about</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Caveat:wght@400;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- TASKBAR -->
+    <div class="taskbar">
+      <div class="taskbar-left">
+        <span class="start-btn">✦ LOLA</span>
+        <span class="taskbar-item active">👤 about</span>
+      </div>
+      <div class="taskbar-right">
+        <a href="#" target="_blank" class="taskbar-social">
+          <img
+            src="assets/img/icons8-instagram-32.png"
+            alt="Instagram"
+            width="20"
+            height="20"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div class="desktop">
+      <!-- SPARKLES -->
+      <div class="sparkle" style="top: 8%; left: 55%"></div>
+      <div
+        class="sparkle"
+        style="top: 15%; left: 72%; animation-delay: 0.5s"
+      ></div>
+      <div
+        class="sparkle"
+        style="top: 28%; left: 85%; animation-delay: 1.2s"
+      ></div>
+      <div
+        class="sparkle"
+        style="top: 45%; left: 62%; animation-delay: 0.3s"
+      ></div>
+      <div
+        class="sparkle"
+        style="top: 55%; left: 78%; animation-delay: 1.8s"
+      ></div>
+      <div
+        class="sparkle"
+        style="top: 70%; left: 58%; animation-delay: 0.9s"
+      ></div>
+      <div
+        class="sparkle"
+        style="top: 80%; left: 88%; animation-delay: 0.6s"
+      ></div>
+      <div
+        class="sparkle"
+        style="top: 20%; left: 92%; animation-delay: 2s"
+      ></div>
+      <div
+        class="sparkle large"
+        style="top: 38%; left: 70%; animation-delay: 1.5s"
+      ></div>
+      <div
+        class="sparkle large"
+        style="top: 65%; left: 82%; animation-delay: 0.2s"
+      ></div>
+
+      <!-- FADED ARTWORK PLACEHOLDER -->
+      <div class="bg-artwork">✦</div>
+
+      <!-- DESKTOP ICONS -->
+      <div class="desktop-icons">
+        <a href="index.html" class="desktop-icon">
+          <div class="icon-img">🏠</div>
+          <span>home</span>
+        </a>
+        <a href="shop.html" class="desktop-icon">
+          <div class="icon-img">🛍️</div>
+          <span>shop</span>
+        </a>
+        <a href="gallery.html" class="desktop-icon">
+          <div class="icon-img">🖼️</div>
+          <span>gallery</span>
+        </a>
+        <a href="contact.html" class="desktop-icon">
+          <div class="icon-img">💌</div>
+          <span>contact</span>
+        </a>
+      </div>
+
+      <!-- WINDOW 1: Artist Photo -->
+      <div
+        class="window"
+        id="window-photo"
+        style="top: 40px; left: 40px; width: 240px"
+      >
+        <div class="window-titlebar" data-window="window-photo">
+          <span class="window-title">📷 lola.jpg</span>
+          <div class="window-controls">
+            <button
+              class="win-btn close-btn"
+              onclick="closeWindow('window-photo')"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+        <div class="window-body" style="padding: 0">
+          <div class="placeholder-img artist-photo">
+            <span>artist photo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WINDOW 2: Bio Summary -->
+      <div
+        class="window"
+        id="window-bio"
+        style="top: 160px; left: 220px; width: 300px"
+      >
+        <div class="window-titlebar" data-window="window-bio">
+          <span class="window-title">✦ about me</span>
+          <div class="window-controls">
+            <button
+              class="win-btn close-btn"
+              onclick="closeWindow('window-bio')"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+        <div class="window-body">
+          <p class="bio-text">
+            hi i'm lola ♡<br /><br />
+            i'm a fine artist based in [city].<br />
+            i work in oils, colored pencil,<br />
+            and pixel art.<br /><br />
+            my work is about [theme].<br />
+            commissions open ✦
+          </p>
+        </div>
+      </div>
+
+      <!-- WINDOW 3: CTA -->
+      <div
+        class="window"
+        id="window-cta"
+        style="top: 360px; left: 380px; width: 240px"
+      >
+        <div class="window-titlebar" data-window="window-cta">
+          <span class="window-title">🛍️ shop & home</span>
+          <div class="window-controls">
+            <button
+              class="win-btn close-btn"
+              onclick="closeWindow('window-cta')"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+        <div class="window-body">
+          <p class="cta-label">like what you see?</p>
+          <div class="welcome-links" style="margin-top: 12px">
+            <a href="shop.html" class="pixel-btn">shop now</a>
+            <a href="index.html" class="pixel-btn secondary">home</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- WINDOW 4: Sample Artwork -->
+      <div
+        class="window"
+        id="window-art"
+        style="top: 460px; left: 40px; width: 220px"
+      >
+        <div class="window-titlebar" data-window="window-art">
+          <span class="window-title">🎨 recent work</span>
+          <div class="window-controls">
+            <button
+              class="win-btn close-btn"
+              onclick="closeWindow('window-art')"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+        <div class="window-body" style="padding: 0">
+          <div class="placeholder-img sample-art">
+            <span>sample artwork</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end desktop -->
+
+    <script src="assets/js/main.js"></script>
+    <footer class="site-footer">
+      <small
+        >icons by <a href="https://icons8.com" target="_blank">icons8</a></small
+      >
+    </footer>
+  </body>
+</html>

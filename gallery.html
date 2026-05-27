@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOLA — gallery</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Caveat:wght@400;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- TASKBAR -->
+    <div class="taskbar">
+      <div class="taskbar-left">
+        <span class="start-btn">✦ LOLA</span>
+        <span class="taskbar-item active">🖼️ gallery</span>
+      </div>
+      <div class="taskbar-right">
+        <a href="#" target="_blank" class="taskbar-social">
+          <img
+            src="assets/img/icons8-instagram-32.png"
+            alt="Instagram"
+            width="20"
+            height="20"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div class="desktop">
+      <!-- DESKTOP ICONS -->
+      <div class="desktop-icons">
+        <a href="index.html" class="desktop-icon">
+          <div class="icon-img">🏠</div>
+          <span>home</span>
+        </a>
+        <a href="shop.html" class="desktop-icon">
+          <div class="icon-img">🛍️</div>
+          <span>shop</span>
+        </a>
+        <a href="about.html" class="desktop-icon">
+          <div class="icon-img">🎨</div>
+          <span>about me</span>
+        </a>
+        <a href="contact.html" class="desktop-icon">
+          <div class="icon-img">💌</div>
+          <span>contact</span>
+        </a>
+      </div>
+
+      <!-- GALLERY WINDOW -->
+      <div class="window gallery-window" id="gallery-window">
+        <div class="window-titlebar" data-window="gallery-window">
+          <span class="window-title">🖼️ gallery — all works</span>
+          <div class="window-controls">
+            <button class="win-btn" onclick="closeWindow('gallery-window')">
+              ✕
+            </button>
+          </div>
+        </div>
+        <div class="window-body gallery-body">
+          <!-- MASONRY GRID -->
+          <div class="masonry-grid">
+            <div
+              class="masonry-item"
+              onclick="
+                openLightbox(
+                  'https://placehold.co/400x500/1a001a/ff2d78?text=work+01',
+                  'untitled 01, oil on canvas',
+                )
+              "
+            >
+              <img src="/assets/img/lola-1.png" alt="work 01" />
+              <div class="masonry-overlay">
+                <span class="masonry-title">untitled 01</span>
+                <span class="masonry-medium">oil on canvas</span>
+              </div>
+            </div>
+
+            <div
+              class="masonry-item"
+              onclick="
+                openLightbox(
+                  'https://placehold.co/400x300/1a001a/ffb3d9?text=work+02',
+                  'untitled 02, colored pencil',
+                )
+              "
+            >
+              <img src="/assets/img/lola-2.png" alt="work 02" />
+              <div class="masonry-overlay">
+                <span class="masonry-title">untitled 02</span>
+                <span class="masonry-medium">colored pencil</span>
+              </div>
+            </div>
+
+            <div
+              class="masonry-item"
+              onclick="
+                openLightbox(
+                  'https://placehold.co/400x600/1a001a/e0b3ff?text=work+03',
+                  'untitled 03, oil on canvas',
+                )
+              "
+            >
+              <img src="/assets/img/lola-3.png" alt="work 03" />
+              <div class="masonry-overlay">
+                <span class="masonry-title">untitled 03</span>
+                <span class="masonry-medium">oil on canvas</span>
+              </div>
+            </div>
+
+            <div
+              class="masonry-item"
+              onclick="
+                openLightbox(
+                  'https://placehold.co/400x400/1a001a/fff5a0?text=work+04',
+                  'untitled 04, pixel art',
+                )
+              "
+            >
+              <img
+                src="https://placehold.co/400x400/1a001a/fff5a0?text=work+04"
+                alt="work 04"
+              />
+              <div class="masonry-overlay">
+                <span class="masonry-title">untitled 04</span>
+                <span class="masonry-medium">pixel art</span>
+              </div>
+            </div>
+
+            <div
+              class="masonry-item"
+              onclick="
+                openLightbox(
+                  'https://placehold.co/400x550/1a001a/b3e5ff?text=work+05',
+                  'untitled 05, oil on canvas',
+                )
+              "
+            >
+              <img
+                src="https://placehold.co/400x550/1a001a/b3e5ff?text=work+05"
+                alt="work 05"
+              />
+              <div class="masonry-overlay">
+                <span class="masonry-title">untitled 05</span>
+                <span class="masonry-medium">oil on canvas</span>
+              </div>
+            </div>
+
+            <div
+              class="masonry-item"
+              onclick="
+                openLightbox(
+                  'https://placehold.co/400x350/1a001a/ff2d78?text=work+06',
+                  'untitled 06, colored pencil',
+                )
+              "
+            >
+              <img
+                src="https://placehold.co/400x350/1a001a/ff2d78?text=work+06"
+                alt="work 06"
+              />
+              <div class="masonry-overlay">
+                <span class="masonry-title">untitled 06</span>
+                <span class="masonry-medium">colored pencil</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIGHTBOX -->
+      <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-inner" onclick="event.stopPropagation()">
+          <div class="window-titlebar">
+            <span class="window-title" id="lightbox-title">untitled</span>
+            <div class="window-controls">
+              <button class="win-btn" onclick="closeLightbox()">✕</button>
+            </div>
+          </div>
+          <div class="lightbox-body">
+            <img id="lightbox-img" src="" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- SHOP CTA WINDOW -->
+      <div
+        class="window"
+        id="shop-window"
+        style="top: 40px; right: 140px; left: auto; width: 220px"
+      >
+        <div class="window-titlebar" data-window="shop-window">
+          <span class="window-title">🛍️ want this?</span>
+          <div class="window-controls">
+            <button class="win-btn" onclick="closeWindow('shop-window')">
+              ✕
+            </button>
+          </div>
+        </div>
+        <div class="window-body">
+          <p class="cta-label">prints available<br />in the shop ♡</p>
+          <div class="welcome-links" style="margin-top: 12px">
+            <a href="shop.html" class="pixel-btn">shop now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end desktop -->
+
+    <footer class="site-footer">
+      <small
+        >icons by <a href="https://icons8.com" target="_blank">icons8</a></small
+      >
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+      function openLightbox(src, title) {
+        document.getElementById("lightbox-img").src = src;
+        document.getElementById("lightbox-title").textContent = title;
+        document.getElementById("lightbox").style.display = "flex";
+      }
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

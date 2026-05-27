@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOLA</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Caveat:wght@400;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- TASKBAR -->
+    <div class="taskbar">
+      <div class="taskbar-left">
+        <span class="start-btn">✦ LOLA</span>
+        <span class="taskbar-item active">🏠 home</span>
+      </div>
+      <div class="taskbar-right">
+        <a href="#" target="_blank" class="taskbar-social">
+          <img
+            src="assets/img/icons8-instagram-32.png"
+            alt="Instagram"
+            width="20"
+            height="20"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div class="desktop">
+      <!-- DESKTOP ICONS -->
+       <img
+        src="assets/img/lola-3.png"
+        alt="artwork"
+        class="desktop-artwork"
+        />
+      <div class="desktop-icons">
+        <a href="shop.html" class="desktop-icon">
+          <div class="icon-img">🛍️</div>
+          <span>shop</span>
+        </a>
+
+        <a href="about.html" class="desktop-icon">
+          <div class="icon-img">🎨</div>
+          <span>about me</span>
+        </a>
+
+        <a href="gallery.html" class="desktop-icon">
+          <div class="icon-img">🖼️</div>
+          <span>gallery</span>
+        </a>
+
+        <a href="contact.html" class="desktop-icon">
+          <div class="icon-img">💌</div>
+          <span>contact</span>
+        </a>
+      </div>
+
+      <!-- WELCOME WINDOW -->
+      <div
+        class="window"
+        id="welcome-window"
+        style="top: 80px; left: 50%; transform: translateX(-50%)"
+      >
+        <div class="window-titlebar" data-window="welcome-window">
+          <span class="window-title">✦ welcome ✦</span>
+          <div class="window-controls">
+            <button
+              class="win-btn close-btn"
+              onclick="closeWindow('welcome-window')"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+        <div class="window-body">
+          <p class="welcome-text">
+            hi!!! i make art.<br />paintings. pixels. prints.<br />take a look
+            around ♡
+          </p>
+          <div class="welcome-links">
+            <a href="gallery.html" class="pixel-btn">gallery</a>
+            <a href="about.html" class="pixel-btn secondary">about me</a>
+          </div>
+        </div>
+      </div>
+      <!-- SPOTIFY WIDGET -->
+      <div
+        class="widget spotify-widget"
+        id="spotify-widget"
+        style="position: absolute; bottom: 60px; left: 20px; width: 220px"
+      >
+        <div class="widget-header">♪ currently listening</div>
+        <iframe
+  style="border-radius:0px"
+  src="https://open.spotify.com/embed/track/4Hl9rOqYomojCmxYfr25im?utm_source=generator"
+  width="100%"
+  height="80"
+  frameBorder="0"
+  allowfullscreen=""
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  loading="lazy">
+</iframe>
+        </iframe>
+      </div>
+
+      <!-- NOW PAINTING WIDGET -->
+      <div
+        class="widget now-playing"
+        id="now-playing"
+        style="top: auto; bottom: 220px; left: 20px"
+      >
+        <div class="widget-header">♪ now making</div>
+        <div class="widget-body">
+          <div class="np-art">🎨</div>
+          <div class="np-info">
+            <div class="np-title">oil on canvas</div>
+            <div class="np-sub">commission open ✦</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end desktop -->
+
+    <script src="assets/js/main.js"></script>
+    <footer class="site-footer">
+      <small
+        >icons by <a href="https://icons8.com" target="_blank">icons8</a></small
+      >
+    </footer>
+  </body>
+</html>
